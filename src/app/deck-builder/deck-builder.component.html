@@ -1,0 +1,58 @@
+<div class="deck-container">
+
+  <!-- PANEL IZQUIERDO (filtros + lista) -->
+  <div class="left-panel">
+
+    <h2>Todas las Cartas</h2>
+
+    <!-- Filtros -->
+    <div class="filters">
+      <input type="text" placeholder="Buscar por nombre..."
+             [(ngModel)]="filterName"
+             (input)="applyFilters()">
+
+      <select [(ngModel)]="filterTipo" (change)="applyFilters()">
+        <option value="">Tipo</option>
+        <option *ngFor="let t of tipos" [value]="t">{{ t }}</option>
+      </select>
+
+      <select [(ngModel)]="filterRaza" (change)="applyFilters()">
+        <option value="">Raza</option>
+        <option *ngFor="let r of razas" [value]="r">{{ r }}</option>
+      </select>
+    </div>
+
+    <!-- LISTA DE CARTAS -->
+    <div class="card-list">
+      <div class="card-item" *ngFor="let c of filteredCards" (click)="addToDeck(c)">
+        <img [src]="c.image" />
+        <p>{{ c.nombre }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL DERECHO (mazo) -->
+  <div class="right-panel">
+    <h2>Tu Mazo ({{ deck.length }}/50)</h2>
+
+    <div class="deck-list">
+      <div class="deck-card-stack"
+           *ngFor="let group of groupedDeck"
+           (click)="removeFromDeck(group.card)">
+
+        <div class="stack">
+          <img *ngFor="let x of group.countArray; let i = index"
+               class="stacked-card"
+               [style.left.px]="i * 6"
+               [src]="group.card.image" />
+        </div>
+
+       
+      </div>
+    </div>
+    <button (click)="saveDeckToFirebase()">Guardar mazo</button>
+    <button (click)="loadDeckFromFirebase()">Cargar mazo</button>
+
+  </div>
+
+</div>

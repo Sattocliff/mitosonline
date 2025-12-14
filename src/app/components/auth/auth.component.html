@@ -1,0 +1,11 @@
+<div class="auth-container">
+  <h2>Iniciar sesión</h2>
+
+  <input [(ngModel)]="email" placeholder="Correo" type="email" />
+  <input [(ngModel)]="password" placeholder="Contraseña" type="password" />
+
+  <button (click)="login()">Entrar</button>
+  <button (click)="register()">Crear cuenta</button>
+
+  <p>{{ message }}</p>
+</div>

@@ -1,0 +1,100 @@
+[
+  {
+    "id": "1",
+    "nombre": "Zorya",
+    "image": "assets/cartas/Bestiarium/1.png",
+    "tipo": "Aliado",
+    "raza": "Faerie"
+  },
+  {
+    "id": "2",
+    "nombre": "Reynard",
+    "image": "assets/cartas/Bestiarium/2.png",
+    "tipo": "Aliado",
+    "raza": "Faerie"
+  },
+  {
+    "id": "3",
+    "nombre": "tumama",
+    "image": "assets/cartas/Bestiarium/2.png",
+    "tipo": "Aliado",
+    "raza": "Faerie"
+  },
+  {
+    "id": "4",
+    "nombre": "papa",
+    "image": "assets/cartas/Bestiarium/2.png",
+    "tipo": "Aliado",
+    "raza": "Faerie"
+  },
+  {
+    "id": "5",
+    "nombre": "penesio",
+    "image": "assets/cartas/Bestiarium/2.png",
+    "tipo": "Aliado",
+    "raza": "Faerie"
+  },
+  {
+    "id": "6",
+    "nombre": "caqioya",
+    "image": "assets/cartas/Bestiarium/2.png",
+    "tipo": "Aliado",
+    "raza": "Faerie"
+  },
+  {
+    "id": "61235",
+    "nombre": "caasdadsqioya",
+    "image": "assets/cartas/Bestiarium/2.png",
+    "tipo": "Aliado",
+    "raza": "Faerie"
+  },
+  {
+    "id": "213123",
+    "nombre": "caqiofssfsya",
+    "image": "assets/cartas/Bestiarium/2.png",
+    "tipo": "Aliado",
+    "raza": "Faerie"
+  },
+  {
+    "id": "2121",
+    "nombre": "caqio3222ya",
+    "image": "assets/cartas/Bestiarium/2.png",
+    "tipo": "Aliado",
+    "raza": "Faerie"
+  },
+  {
+    "id": "654",
+    "nombre": "caqioy121a",
+    "image": "assets/cartas/Bestiarium/2.png",
+    "tipo": "Aliado",
+    "raza": "Faerie"
+  },
+  {
+    "id": "65",
+    "nombre": "caqiosdvvvvya",
+    "image": "assets/cartas/Bestiarium/2.png",
+    "tipo": "Aliado",
+    "raza": "Faerie"
+  },
+  {
+    "id": "344",
+    "nombre": "caqioqweqwqeqya",
+    "image": "assets/cartas/Bestiarium/2.png",
+    "tipo": "Aliado",
+    "raza": "Faerie"
+  },
+  {
+    "id": "86",
+    "nombre": "caqioyfdvsvsa",
+    "image": "assets/cartas/Bestiarium/2.png",
+    "tipo": "Aliado",
+    "raza": "Faerie"
+  },
+  {
+    "id": "7",
+    "nombre": "caqiqdadddddoya",
+    "image": "assets/cartas/Bestiarium/2.png",
+    "tipo": "Aliado",
+    "raza": "Faerie"
+  }
+]

@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
+
+import { RouterModule } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
+import { DeckBuilderComponent } from './deck-builder/deck-builder.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [  DeckBuilderComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.less'
+  styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'mititos';
 }
