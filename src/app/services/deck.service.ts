@@ -1,24 +1,34 @@
 import { Injectable, inject } from '@angular/core';
-import { Firestore, doc, setDoc, getDoc } from '@angular/fire/firestore';
+import {
+  Firestore,
+  collection,
+  addDoc,
+  getDocs
+} from '@angular/fire/firestore';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class DeckService {
 
   private firestore = inject(Firestore);
 
+  // ✅ Guardar un NUEVO mazo
   async saveDeck(userId: string, deck: any) {
-    const ref = doc(this.firestore, `decks/${userId}`);
-    await setDoc(ref, { deck }, { merge: true }); // merge = no borra otros campos
+    const decksRef = collection(this.firestore, `users/${userId}/decks`);
+
+    await addDoc(decksRef, {
+      deck,
+      createdAt: new Date()
+    });
   }
 
-  async loadDeck(userId: string): Promise<any | null> {
-    const ref = doc(this.firestore, `decks/${userId}`);
-    const snap = await getDoc(ref);
+  // ✅ Obtener TODOS los mazos del usuario
+  async getUserDecks(userId: string): Promise<any[]> {
+    const decksRef = collection(this.firestore, `users/${userId}/decks`);
+    const snap = await getDocs(decksRef);
 
-    if (!snap.exists()) return null;
-
-    return snap.data()['deck'];
+    return snap.docs.map(d => ({
+      id: d.id,
+      ...d.data()
+    }));
   }
 }

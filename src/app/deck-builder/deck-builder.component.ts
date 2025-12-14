@@ -5,10 +5,11 @@ import { CardsService } from '../services/cards.service';
 import { Card } from '../models/card';
 import { DeckService } from '../services/deck.service';
 import { AuthService } from '../services/auth.service';
+import { HeaderComponent } from "../components/header/header.component";
 @Component({
   selector: 'app-deck-builder',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, HeaderComponent],
   templateUrl: './deck-builder.component.html',
   styleUrls: ['./deck-builder.component.less']
 })
@@ -68,35 +69,21 @@ export class DeckBuilderComponent implements OnInit {
   }
 
 
-  saveDeckToFirebase() {
+  async saveDeckToFirebase() {
   const uid = this.authService.getUserId();
   if (!uid) {
-    alert("Debes iniciar sesión para guardar tu mazo");
+    alert('Debes iniciar sesión');
     return;
   }
 
-  this.deckService.saveDeck(uid, this.deck)
-    .then(() => alert("Mazo guardado 🎉"))
-    .catch(err => console.error(err));
+  await this.deckService.saveDeck(uid, this.deck);
+  alert('Mazo guardado 🎉');
 }
 
 
-loadDeckFromFirebase() {
-  const uid = this.authService.getUserId();
-  if (!uid) {
-    alert("Debes iniciar sesión para cargar tu mazo");
-    return;
-  }
 
-  this.deckService.loadDeck(uid)
-    .then(deck => {
-      if (deck) {
-        this.deck = deck;
-        this.updateGroupedDeck();
-      }
-    })
-    .catch(err => console.error(err));
-}
+
+
 
 
   // Agrupar cartas iguales

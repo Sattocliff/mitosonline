@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-auth',
   standalone: true,
@@ -12,12 +14,13 @@ export class AuthComponent {
   password = '';
   message = '';
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router:Router) {}
 
   async login() {
     try {
       await this.authService.login(this.email, this.password);
       this.message = 'Login correcto!';
+      this.router.navigate(['/deck-builder']);
     } catch (err: any) {
       this.message = err.message;
     }
